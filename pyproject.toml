@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "unified-pyktok"
+version = "0.1.0"
+description = "TikTok scraping module with Selenium and hidden API modes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "BSD-3-Clause" }
+authors = [
+  { name = "Deen Freelon, Gayoung Jeon, ......" }
+]
+keywords = ["tiktok", "scraping", "selenium", "api"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "beautifulsoup4>=4.12.0",
+  "browser-cookie3>=0.19.1",
+  "pandas>=2.0.0",
+  "requests>=2.31.0",
+  "selenium>=4.0.0",
+  "undetected-chromedriver>=3.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/picl-asc/unified_pyktok"
+
+[project.scripts]
+unified-pyktok = "unified_pyktok:_cli"
+
+[tool.hatch.build.targets.wheel]
+include = [
+  "unified_pyktok.py",
+]
